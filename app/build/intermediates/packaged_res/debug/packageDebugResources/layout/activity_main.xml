@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Root: LinearLayout vertical — replaces ConstraintLayout -->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg_panel"
+    android:fitsSystemWindows="true">
+
+    <!-- ════════════════════════════════════
+         DISPLAY SECTION — FrameLayout (layered)
+         ════════════════════════════════════ -->
+    <FrameLayout
+        android:id="@+id/displayFrame"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2.2"
+        android:background="@color/bg_display">
+
+        <!-- Scanline overlay drawable -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/scanline_overlay"
+            android:alpha="0.4"/>
+
+        <!-- Display content — LinearLayout vertical inside FrameLayout -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="bottom"
+            android:orientation="vertical"
+            android:padding="20dp"
+            android:paddingTop="48dp">
+
+            <!-- Mode badge row — LinearLayout horizontal -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvDeg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="6dp"
+                    android:background="@drawable/badge_active_bg"
+                    android:fontFamily="monospace"
+                    android:letterSpacing="0.15"
+                    android:paddingHorizontal="8dp"
+                    android:paddingVertical="3dp"
+                    android:text="DEG"
+                    android:textColor="@color/accent_blue"
+                    android:textSize="10sp" />
+
+                <TextView
+                    android:id="@+id/tvRad"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/badge_inactive_bg"
+                    android:fontFamily="monospace"
+                    android:letterSpacing="0.15"
+                    android:paddingHorizontal="8dp"
+                    android:paddingVertical="3dp"
+                    android:text="RAD"
+                    android:textColor="@color/text_dim"
+                    android:textSize="10sp" />
+
+                <!-- Spacer -->
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/tvMemIndicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="monospace"
+                    android:letterSpacing="0.1"
+                    android:text="M"
+                    android:textColor="@color/accent_purple"
+                    android:textSize="11sp"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <!-- Expression display -->
+            <TextView
+                android:id="@+id/tvExpression"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:ellipsize="start"
+                android:fontFamily="monospace"
+                android:gravity="end"
+                android:maxLines="2"
+                android:minHeight="24dp"
+                android:text=""
+                android:textColor="@color/text_dim"
+                android:textSize="14sp" />
+
+            <!-- Main result -->
+            <TextView
+                android:id="@+id/tvResult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:ellipsize="start"
+                android:fontFamily="monospace"
+                android:gravity="end"
+                android:maxLines="1"
+                android:text="0"
+                android:textColor="@color/text_main"
+                android:textSize="56sp"
+                android:textStyle="bold" />
+
+            <!-- Divider line -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginVertical="10dp"
+                android:background="@color/divider_color" />
+
+            <!-- History row — LinearLayout horizontal -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvHistoryIcon"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/circle_border_bg"
+                    android:gravity="center"
+                    android:text="↺"
+                    android:textColor="@color/text_dim"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tvHistory"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ellipsize="start"
+                    android:fontFamily="monospace"
+                    android:gravity="end"
+                    android:maxLines="1"
+                    android:text="— no history —"
+                    android:textColor="@color/text_dim"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Bottom glow line (decorative) -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_gravity="bottom"
+            android:background="@drawable/glow_line"/>
+    </FrameLayout>
+
+    <!-- ════════════════════════════════════
+         BUTTON AREA — LinearLayout vertical
+         ════════════════════════════════════ -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5"
+        android:fillViewport="true">
+    <LinearLayout
+        android:id="@+id/buttonArea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/bg_panel"
+        android:paddingHorizontal="10dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="4dp">
+
+        <!-- MODE TOGGLE ROW — LinearLayout horizontal -->
+        <LinearLayout
+            android:id="@+id/modeToggleRow"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp"
+            android:weightSum="3">
+
+            <Button
+                android:id="@+id/btnModeBasic"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Basic"
+                android:textSize="12sp"
+                android:letterSpacing="0.08"
+                android:layout_marginEnd="5dp"
+                style="@style/ModeToggleActive"/>
+
+            <Button
+                android:id="@+id/btnModeSci"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Scientific"
+                android:textSize="12sp"
+                android:letterSpacing="0.08"
+                android:layout_marginEnd="5dp"
+                style="@style/ModeToggleInactive"/>
+
+            <Button
+                android:id="@+id/btnModeShift"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="2nd"
+                android:textSize="12sp"
+                android:letterSpacing="0.08"
+                style="@style/ModeToggleInactive"/>
+        </LinearLayout>
+
+        <!-- SCIENTIFIC SECTION — TableLayout (5 cols × 4 rows) -->
+        <TableLayout
+            android:id="@+id/sciSection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="*"
+            android:shrinkColumns="*"
+            android:visibility="gone"
+            android:layout_marginBottom="6dp">
+
+            <!-- Sci Row 1 -->
+            <TableRow android:layout_height="36dp">
+                <Button android:id="@+id/btnSin"   android:text="sin"   style="@style/SciButton"/>
+                <Button android:id="@+id/btnCos"   android:text="cos"   style="@style/SciButton"/>
+                <Button android:id="@+id/btnTan"   android:text="tan"   style="@style/SciButton"/>
+                <Button android:id="@+id/btnLog"   android:text="log"   style="@style/SciButton"/>
+                <Button android:id="@+id/btnLn"    android:text="ln"    style="@style/SciButton"/>
+            </TableRow>
+
+            <!-- Sci Row 2 -->
+            <TableRow android:layout_height="48dp">
+                <Button android:id="@+id/btnAsin" android:text="sin-1" android:textSize="11sp" style="@style/SciButton"/>
+                <Button android:id="@+id/btnAcos" android:text="cos-1" android:textSize="11sp" style="@style/SciButton"/>
+                <Button android:id="@+id/btnAtan" android:text="tan-1" android:textSize="11sp" style="@style/SciButton"/>
+                <Button android:id="@+id/btnPow2"  android:text="x²"   style="@style/SciButton"/>
+                <Button android:id="@+id/btnSqrt"  android:text="√x"   style="@style/SciButton"/>
+            </TableRow>
+
+            <!-- Sci Row 3 -->
+            <TableRow android:layout_height="36dp">
+                <Button android:id="@+id/btnPow3"  android:text="x³"   style="@style/SciButton"/>
+                <Button android:id="@+id/btnCbrt"  android:text="∛x"   style="@style/SciButton"/>
+                <Button android:id="@+id/btnExp"   android:text="eˣ"   style="@style/SciButton"/>
+                <Button android:id="@+id/btnPi"    android:text="π"    style="@style/SciButton"/>
+                <Button android:id="@+id/btnEuler" android:text="e"    style="@style/SciButton"/>
+            </TableRow>
+
+            <!-- Sci Row 4 -->
+            <TableRow android:layout_height="36dp">
+                <Button android:id="@+id/btnInv"   android:text="1/x"  style="@style/SciButton"/>
+                <Button android:id="@+id/btnAbs"   android:text="|x|"  style="@style/SciButton"/>
+                <Button android:id="@+id/btnFact"  android:text="n!"   style="@style/SciButton"/>
+                <Button android:id="@+id/btnMS"    android:text="MS"   style="@style/SciButtonMem"/>
+                <Button android:id="@+id/btnMR"    android:text="MR"   style="@style/SciButtonMem"/>
+            </TableRow>
+        </TableLayout>
+
+        <!-- MAIN BUTTON TABLE — TableLayout 5×4 -->
+        <TableLayout
+            android:id="@+id/mainTable"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:stretchColumns="*"
+            android:shrinkColumns="*">
+
+            <!-- Row 1: AC  DEL  %  ÷ -->
+            <TableRow android:layout_height="0dp" android:layout_weight="1">
+                <Button android:id="@+id/btnClear"    android:text="AC"  style="@style/FuncButton"/>
+                <Button android:id="@+id/btnBack"     android:text="⌫"   style="@style/BackButton"/>
+                <Button android:id="@+id/btnPercent"  android:text="%"   style="@style/ModButton"/>
+                <Button android:id="@+id/btnDivide"   android:text="÷"   style="@style/OpButton"/>
+            </TableRow>
+
+            <!-- Row 2: 7  8  9  × -->
+            <TableRow android:layout_height="0dp" android:layout_weight="1">
+                <Button android:id="@+id/btn7"         android:text="7"  style="@style/NumButton"/>
+                <Button android:id="@+id/btn8"         android:text="8"  style="@style/NumButton"/>
+                <Button android:id="@+id/btn9"         android:text="9"  style="@style/NumButton"/>
+                <Button android:id="@+id/btnMultiply"  android:text="×"  style="@style/OpButton"/>
+            </TableRow>
+
+            <!-- Row 3: 4  5  6  − -->
+            <TableRow android:layout_height="0dp" android:layout_weight="1">
+                <Button android:id="@+id/btn4"         android:text="4"  style="@style/NumButton"/>
+                <Button android:id="@+id/btn5"         android:text="5"  style="@style/NumButton"/>
+                <Button android:id="@+id/btn6"         android:text="6"  style="@style/NumButton"/>
+                <Button android:id="@+id/btnSubtract"  android:text="−"  style="@style/OpButton"/>
+            </TableRow>
+
+            <!-- Row 4: 1  2  3  + -->
+            <TableRow android:layout_height="0dp" android:layout_weight="1">
+                <Button android:id="@+id/btn1"    android:text="1"  style="@style/NumButton"/>
+                <Button android:id="@+id/btn2"    android:text="2"  style="@style/NumButton"/>
+                <Button android:id="@+id/btn3"    android:text="3"  style="@style/NumButton"/>
+                <Button android:id="@+id/btnAdd"  android:text="+"  style="@style/OpButton"/>
+            </TableRow>
+
+            <!-- Row 5: 0(span=2)  .  +/-  = -->
+            <TableRow android:layout_height="0dp"
+                android:layout_weight="1">
+                <Button
+                    android:id="@+id/btn0"
+                    android:text="0"
+                    android:layout_span="1"
+                    style="@style/ZeroButton"/>
+                <Button
+                    android:id="@+id/btnDot"
+                    android:text="."  style="@style/NumButton"/>
+                
+                <Button
+                    android:id="@+id/btnEquals"
+                    android:layout_span="2"
+                    android:text="="  style="@style/EqButton"/>
+            </TableRow>
+        </TableLayout>
+    </LinearLayout>
+
+    </ScrollView>
+
+    <!-- BOTTOM NAV — LinearLayout horizontal -->
+    <LinearLayout
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:background="@color/bg_nav"
+        android:weightSum="4"
+        android:gravity="center_vertical">
+
+        <LinearLayout
+            android:id="@+id/navCalc"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="?attr/selectableItemBackground">
+            <TextView
+                android:text="⌨"
+                android:textSize="18sp"
+                android:textColor="@color/accent_blue"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="CALC"
+                android:textSize="9sp"
+                android:textColor="@color/accent_blue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:letterSpacing="0.15"
+                android:gravity="center"
+                android:fontFamily="monospace"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/navHistory"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="?attr/selectableItemBackground">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🕒"
+                android:textSize="18sp"
+                android:gravity="center"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="HISTORY"
+                android:textSize="9sp"
+                android:textColor="@color/text_dim"
+                android:letterSpacing="0.15"
+                android:gravity="center"
+                android:fontFamily="monospace"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/navConvert"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="?attr/selectableItemBackground">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="⇄"
+                android:textSize="18sp"
+                android:textColor="@color/text_dim"
+                android:gravity="center"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CONVERT"
+                android:textSize="9sp"
+                android:textColor="@color/text_dim"
+                android:letterSpacing="0.15"
+                android:gravity="center"
+                android:fontFamily="monospace"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/navSettings"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="?attr/selectableItemBackground">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="⚙"
+                android:textSize="18sp"
+                android:textColor="@color/text_dim"
+                android:gravity="center"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SETTINGS"
+                android:textSize="9sp"
+                android:textColor="@color/text_dim"
+                android:letterSpacing="0.15"
+                android:gravity="center"
+                android:fontFamily="monospace"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

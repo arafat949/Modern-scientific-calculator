@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- ── Background ── -->
+    <color name="bg_deep">#080C14</color>
+    <color name="bg_panel">#0D1220</color>
+    <color name="bg_display">#060A10</color>
+    <color name="bg_nav">#080C14</color>
+
+    <!-- ── Accent ── -->
+    <color name="accent_blue">#00D4FF</color>
+    <color name="accent_orange">#FF6B35</color>
+    <color name="accent_green">#00FF88</color>
+    <color name="accent_purple">#A855F7</color>
+
+    <!-- ── Text ── -->
+    <color name="text_main">#E8F4F8</color>
+    <color name="text_dim">#4D7A8A</color>
+    <color name="divider_color">#0D1F2D</color>
+
+    <!-- ── Button backgrounds ── -->
+    <color name="btn_num_bg">#111827</color>
+    <color name="btn_num_pressed">#1A2535</color>
+    <color name="btn_num_text">#E8F4F8</color>
+
+    <color name="btn_op_bg">#0A2010</color>
+    <color name="btn_op_pressed">#0F3018</color>
+    <color name="btn_op_text">#00FF88</color>
+
+    <color name="btn_func_bg">#2D0808</color>
+    <color name="btn_func_pressed">#4A1010</color>
+    <color name="btn_func_text">#FF6B6B</color>
+
+    <color name="btn_mod_bg">#1A1A30</color>
+    <color name="btn_mod_pressed">#222244</color>
+    <color name="btn_mod_text">#C084FC</color>
+
+    <color name="btn_eq_bg">#FF6B35</color>
+    <color name="btn_eq_pressed">#FF8C5A</color>
+    <color name="btn_eq_text">#FFFFFF</color>
+
+    <color name="btn_sci_bg">#0D1F3C</color>
+    <color name="btn_sci_pressed">#162D54</color>
+    <color name="btn_sci_text">#7DD3FC</color>
+
+    <color name="btn_mem_bg">#1E0D3C</color>
+    <color name="btn_mem_text">#C084FC</color>
+
+    <color name="mode_active_bg">#0D2535</color>
+    <color name="mode_active_border">#00D4FF</color>
+    <color name="mode_inactive_bg">#080C14</color>
+    <color name="mode_inactive_text">#4D7A8A</color>
+</resources>

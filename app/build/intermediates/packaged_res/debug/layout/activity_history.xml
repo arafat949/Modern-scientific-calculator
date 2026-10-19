@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg_panel"
+    android:fitsSystemWindows="true">
+
+    <!-- Toolbar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="16dp"
+        android:background="@color/bg_display">
+
+        <TextView
+            android:id="@+id/btnBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:text="←"
+            android:textSize="20sp"
+            android:textColor="@color/accent_blue"
+            android:gravity="center"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="HISTORY"
+            android:textSize="14sp"
+            android:textColor="@color/text_main"
+            android:fontFamily="monospace"
+            android:letterSpacing="0.2"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/btnClearHistory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CLEAR"
+            android:textSize="11sp"
+            android:textColor="@color/btn_func_text"
+            android:fontFamily="monospace"
+            android:letterSpacing="0.1"
+            android:padding="8dp"/>
+    </LinearLayout>
+
+    <!-- History list -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/historyRecycler"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="12dp"
+        android:clipToPadding="false"/>
+
+    <!-- Empty state -->
+    <TextView
+        android:id="@+id/tvEmpty"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="No history yet.\nStart calculating!"
+        android:textSize="16sp"
+        android:textColor="@color/text_dim"
+        android:gravity="center"
+        android:fontFamily="monospace"
+        android:visibility="gone"/>
+</LinearLayout>

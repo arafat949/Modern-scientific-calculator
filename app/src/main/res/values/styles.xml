@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- ════ App Theme ════ -->
+    <style name="Theme.ModernCalculator" parent="Theme.MaterialComponents.NoActionBar">
+        <item name="colorPrimary">@color/accent_blue</item>
+        <item name="colorPrimaryDark">@color/bg_deep</item>
+        <item name="colorAccent">@color/accent_orange</item>
+        <item name="android:windowBackground">@color/bg_panel</item>
+        <item name="android:statusBarColor">@color/bg_deep</item>
+        <item name="android:navigationBarColor">@color/bg_deep</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+
+    <!-- ════ Base Button ════ -->
+    <style name="BaseCalcButton" parent="Widget.MaterialComponents.Button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_margin">4dp</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="android:letterSpacing">0.03</item>
+        <item name="cornerRadius">14dp</item>
+        <item name="android:elevation">3dp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="rippleColor">@color/accent_blue</item>
+    </style>
+
+    <!-- ════ Number Button ════ -->
+    <style name="NumButton" parent="BaseCalcButton">
+        <item name="backgroundTint">@color/btn_num_bg</item>
+        <item name="android:textColor">@color/btn_num_text</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">monospace</item>
+    </style>
+
+    <!-- ════ Operator Button ════ -->
+    <style name="OpButton" parent="BaseCalcButton">
+        <item name="backgroundTint">@color/btn_op_bg</item>
+        <item name="android:textColor">@color/btn_op_text</item>
+        <item name="android:textSize">26sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">monospace</item>
+        <item name="strokeColor">@color/btn_op_text</item>
+        <item name="strokeWidth">0.5dp</item>
+    </style>
+
+    <!-- ════ Function Button (AC) ════ -->
+    <style name="FuncButton" parent="BaseCalcButton">
+        <item name="backgroundTint">@color/btn_func_bg</item>
+        <item name="android:textColor">@color/btn_func_text</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">monospace</item>
+        <item name="strokeColor">@color/btn_func_text</item>
+        <item name="strokeWidth">0.5dp</item>
+    </style>
+
+    <!-- ════ Backspace Button ════ -->
+    <style name="BackButton" parent="BaseCalcButton">
+        <item name="backgroundTint">@color/btn_mod_bg</item>
+        <item name="android:textColor">@color/accent_purple</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:fontFamily">monospace</item>
+    </style>
+
+    <!-- ════ Modifier Button (%, +/-) ════ -->
+    <style name="ModButton" parent="BaseCalcButton">
+        <item name="backgroundTint">@color/btn_mod_bg</item>
+        <item name="android:textColor">@color/btn_mod_text</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:fontFamily">monospace</item>
+    </style>
+
+    <!-- ════ Equals Button ════ -->
+    <style name="EqButton" parent="BaseCalcButton">
+        <item name="backgroundTint">@color/btn_eq_bg</item>
+        <item name="android:textColor">@color/btn_eq_text</item>
+        <item name="android:textSize">28sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">monospace</item>
+        <item name="android:elevation">6dp</item>
+    </style>
+
+    <!-- ════ Zero Button (wide) ════ -->
+    <style name="ZeroButton" parent="NumButton">
+        <item name="cornerRadius">30dp</item>
+        <item name="android:gravity">center_vertical|start</item>
+        <item name="android:paddingStart">26dp</item>
+    </style>
+
+    <!-- ════ Scientific Button ════ -->
+    <style name="SciButton" parent="BaseCalcButton">
+        <item name="backgroundTint">@color/btn_sci_bg</item>
+        <item name="android:textColor">@color/btn_sci_text</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:lines">1</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">none</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">monospace</item>
+        <item name="android:letterSpacing">0.05</item>
+        <item name="cornerRadius">10dp</item>
+        <item name="strokeColor">@color/btn_sci_text</item>
+        <item name="strokeWidth">0.3dp</item>
+        <item name="android:layout_margin">3dp</item>
+    </style>
+
+    <!-- ════ Scientific Memory Button ════ -->
+    <style name="SciButtonMem" parent="SciButton">
+        <item name="backgroundTint">@color/btn_mem_bg</item>
+        <item name="android:textColor">@color/btn_mem_text</item>
+        <item name="strokeColor">@color/btn_mem_text</item>
+    </style>
+
+    <!-- ════ Mode Toggle Active ════ -->
+    <style name="ModeToggleActive" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:textColor">@color/accent_blue</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:lines">1</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">none</item>
+        <item name="android:fontFamily">monospace</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="strokeColor">@color/accent_blue</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="cornerRadius">8dp</item>
+        <item name="backgroundTint">@color/mode_active_bg</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+
+    <!-- ════ Mode Toggle Inactive ════ -->
+    <style name="ModeToggleInactive" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:textColor">@color/mode_inactive_text</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:lines">1</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">none</item>
+        <item name="android:fontFamily">monospace</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="strokeColor">@color/mode_inactive_text</item>
+        <item name="strokeWidth">0.5dp</item>
+        <item name="cornerRadius">8dp</item>
+        <item name="backgroundTint">@color/mode_inactive_bg</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+
+</resources>

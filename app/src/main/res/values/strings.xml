@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Modern Calculator</string>
+    <string name="no_history">— no history —</string>
+    <string name="error">Error</string>
+    <string name="infinity">∞</string>
+    <string name="memory_stored">Memory stored</string>
+    <string name="memory_empty">Memory is empty</string>
+    <string name="btn_asin">sin&#x207B;&#xB9;</string>
+    <string name="btn_acos">cos&#x207B;&#xB9;</string>
+    <string name="btn_atan">tan&#x207B;&#xB9;</string>
+</resources>
