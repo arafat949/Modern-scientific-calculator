@@ -8,6 +8,10 @@
   <img src="./screenshots/scientific.png" width="320" alt="Scientific Mode" />
 </p>
 
+## 📱 App Preview
+
+![App Screenshot](./screenshots/scientific.png)
+
 ## প্রজেক্ট পরিচিতি
 
 একটি সম্পূর্ণ **আধুনিক Scientific Calculator** Android অ্যাপ।
