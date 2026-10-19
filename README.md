@@ -1,5 +1,13 @@
 # 🧮 Modern Scientific Calculator — Android App
 
+## 📱 App Screenshots
+
+<p align="center">
+  <img src="./screenshots/basic.png" width="320" alt="Basic Mode" />
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="./screenshots/scientific.png" width="320" alt="Scientific Mode" />
+</p>
+
 ## প্রজেক্ট পরিচিতি
 
 একটি সম্পূর্ণ **আধুনিক Scientific Calculator** Android অ্যাপ।
